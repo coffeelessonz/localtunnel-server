@@ -1,4 +1,3 @@
-import log from 'book';
 import Koa from 'koa';
 import tldjs from 'tldjs';
 import Debug from 'debug';
@@ -122,7 +121,7 @@ export default function(opt) {
         const hostname = req.headers.host;
         if (!hostname) {
             res.statusCode = 400;
-            res.end('Host header is required');
+            res.end('localtunnel Host header is required');
             return;
         }
 
@@ -135,7 +134,7 @@ export default function(opt) {
         const client = manager.getClient(clientId);
         if (!client) {
             res.statusCode = 404;
-            res.end('404');
+            res.end('localtunnel: 404');
             return;
         }
 
